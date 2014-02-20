@@ -59,7 +59,6 @@ build() {
   python2.7 gentree.py --git-revision ${_kernelrev} --clean "${srcdir}/${_kernel_gitname}" "${srcdir}/backports-output"
 
   cd "${srcdir}/backports-output"
-    pwd
     msg2 "patching..."
     patch -p0 < ../mwifiex-do-not-create-ap-and-p2p-interfaces-upon-driver-loading.patch
 

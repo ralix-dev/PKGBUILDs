@@ -1,12 +1,13 @@
 
 # Contributor tomasgroth at yahoo.dk
 # Contributor WarheadsSE <max@warheads.net>
-# Maintainer CruX <CruX@project-insanity.org>
+# Contributor CruX <CruX@project-insanity.org>
+# Maintainer ralix <ralix@gmx.de>
 
-pkgname=xbmc-imx-git
-pkgver=13.20140128
+pkgname=xbmc-imx6-git
+pkgver=13.20140219
 pkgrel=1
-pkgdesc="A software media player and entertainment hub for digital media for the Wandboard"
+pkgdesc="A software media player and entertainment hub for digital media for the Utilite"
 arch=('armv7h')
 url="http://xbmc.org"
 license=('GPL' 'custom')
@@ -25,10 +26,9 @@ source=('xbmc.service')
 
 md5sums=('36780e43d432c488259d9a899b1bcb28')
 
-# imx-wip branch by Stephan "wolfgar" Rafin
 _gitname="xbmc"
-_gitroot="git://github.com/wolfgar"
-_gitbranch="imx-wip"
+_gitroot="git://github.com/xbmc-imx6"
+_gitbranch="master"
 
 _prefix=/usr
 
