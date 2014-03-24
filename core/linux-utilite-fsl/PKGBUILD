@@ -1,6 +1,8 @@
 # i.MX6 Wandboard
 # Contributor : CruX <CruX@project-insanity.org.org>
 # Maintainer: ralix ralix@gmx.de
+
+
 buildarch=4
 
 pkgbase=linux-utilite-fsl
@@ -13,10 +15,12 @@ pkgrel=5
 arch=('armv7h')
 url="http://www.kernel.org/"
 license=('GPL2')
-makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'uboot-mkimage')
+makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'uboot-mkimage' 'lzop')
 options=('!strip')
-source=('config')
-md5sums=('b4b77e5662cd695107b957bd24e0f4f4')
+source=('config'
+        'https://raw.github.com/Freescale/meta-fsl-arm/46de5ee9dec3486c3e081f9f39ac1a0f967afd54/recipes-kernel/linux/linux-imx-3.0.35/ENGR00278350-gpu-viante-4.6.9p13-kernel-part-integra.patch')
+md5sums=('6acd407c68360ca6701ede03522e0a15'
+         '41941771adfed8b55574a7434d2c3393')
 
 _gitname="utilite"
 _gitroot="git://github.com/wolfgar"
@@ -41,7 +45,7 @@ prepare() {
 
   # allow use of 3.10.17 gpu binaries
   #patch --ignore-whitespace -p1 < ../drm-vivante-Add-00-sufix-in-returned-bus-Id.patch
-  #patch --ignore-whitespace -p1 < ../ENGR00278350-gpu-viante-4.6.9p13-kernel-part-integra.patch
+  patch --ignore-whitespace -p1 < ../ENGR00278350-gpu-viante-4.6.9p13-kernel-part-integra.patch
 
 
   # add pkgrel to extraversion, reset the file first to avoid multiple suffixes
